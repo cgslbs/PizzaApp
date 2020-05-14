@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="pizza">
+    <img src="{{ pizza.photo }}" />
+    <ion-card-header>
+      <ion-card-subtitle>{{ pizza.nom }}</ion-card-subtitle>
+      <ion-card-title>{{ pizza.prix }}€</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let ing of listIngredient">
+          <ion-label >
+            {{ ing.nom }}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
