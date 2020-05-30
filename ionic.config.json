@@ -1,5 +1,7 @@
 {
   "name": "PizzaApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

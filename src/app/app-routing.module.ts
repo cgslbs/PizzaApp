@@ -8,6 +8,22 @@ const routes: Routes = [
     path: 'details',
     loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
   },
+  {
+    path: 'cart',
+    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+  },
+  {
+    path: 'form-pizza',
+    loadChildren: () => import('./form-pizza/form-pizza.module').then( m => m.FormPizzaPageModule)
+  },
+  {
+    path: 'form-ing',
+    loadChildren: () => import('./form-ing/form-ing.module').then( m => m.FormIngPageModule)
+  },
 ];
 
 @NgModule({

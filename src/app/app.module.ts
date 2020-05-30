@@ -11,10 +11,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { PizzaService } from './services/pizza.service';
+import {AddFormComponent} from './add-form/add-form.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, AddFormComponent],
+  entryComponents: [AddFormComponent],
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
