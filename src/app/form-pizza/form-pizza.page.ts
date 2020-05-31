@@ -13,6 +13,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class FormPizzaPage implements OnInit {
 
+  hasChanged = false;
   lastId: number;
   title = '';
   pizza: Pizza;
@@ -42,6 +43,11 @@ export class FormPizzaPage implements OnInit {
     this.getIngredient();
   }
 
+  onChange() {
+    this.hasChanged = true;
+
+  }
+
   getIngredient() {
     this.pizzaService.getListIngredient('ingredient').subscribe(
         data => {
@@ -58,6 +64,7 @@ export class FormPizzaPage implements OnInit {
     } else {
       this.isChecked.push(id);
     }
+    this.hasChanged = true;
   }
 
   submitPizza(pizza: Pizza) {
@@ -75,6 +82,7 @@ export class FormPizzaPage implements OnInit {
       this.pizzaService.addPizza(pizza, 'pizza').subscribe(
           (res) => {
             console.log(res);
+            this.router.navigate(['/admin']);
           }
       );
     } else {
@@ -82,6 +90,7 @@ export class FormPizzaPage implements OnInit {
       this.pizzaService.updatePizza(pizza, 'pizza').subscribe(
           (res) => {
             console.log(res);
+            this.router.navigate(['/admin']);
           }
       );
     }
